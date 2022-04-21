@@ -69,7 +69,11 @@ public class GameManager
 
     private GameManager()
     {
-
+        for (int i = 0; i < 4; i++)
+        {
+            m_players[i] = new Player();
+            m_players[i].SetPlayerId(i);
+        }
     }
 
     public static GameManager GetInstance()
@@ -78,15 +82,6 @@ public class GameManager
             m_instance = new GameManager();
 
         return m_instance;
-    }
-
-    public void InitPlayers()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            m_players[i] = new Player();
-            m_players[i].SetPlayerId(i);
-        }
     }
 
     public int GetCurrentPlayer()
@@ -113,7 +108,7 @@ public class GameManager
         return (m_diceValue, movableTokens, turnChanged);
     }
 
-    public (List<int>, bool) GetMovableTokens()
+    (List<int>, bool) GetMovableTokens()
     {
         List<int> movableTokens = new List<int>();
         bool turnchanged = false;

@@ -26,7 +26,6 @@ public class GameBoard : MonoBehaviour
         Instance = this;
 
         m_gameManager = GameManager.GetInstance();
-        m_gameManager.InitPlayers();
     }
 
     //Start is called before the first frame update
